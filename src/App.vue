@@ -1,13 +1,23 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div id="app" class="md-background">
+    <SideNav :title="appTitle"></SideNav>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import SideNav from '@/components/SideNav'
+
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      appTitle: 'appTitle'
+    }
+  },
+  components: {
+    SideNav
+  }
 }
 </script>
 
@@ -18,6 +28,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
